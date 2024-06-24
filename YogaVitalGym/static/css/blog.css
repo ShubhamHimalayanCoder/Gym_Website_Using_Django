@@ -1,0 +1,14 @@
+#section-1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section-heading{
+    text-align: center;
+    margin-top: 350px;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 100px;
+}

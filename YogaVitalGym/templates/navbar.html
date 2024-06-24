@@ -1,0 +1,65 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<nav class="navbar navbar-expand-lg sticky container-fluid">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'homepage' %}"><span>Yoga</span>Vital<span>Gym</span></a>
+    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span><b style="color: whitesmoke; font-size: 25px; font-family: cursive;">Menu</b>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'homepage' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about-us' %}">About</a>
+        </li>
+        <li class="nav-item dropdown" id="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'gym' %}">Gym</a></li>
+            <li><a class="dropdown-item" href="{% url 'yoga' %}">Yoga</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'diet-plan' %}">Diet Planning</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
+        </li>
+      </ul>
+      {% if not request.session.user%}
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'Gym_Customers:customer-signup' %}'">Sign Up</button>
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'login' %}'">Login</button>
+      {% elif request.session.user == 'Customer' %}
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'Gym_Customers:customer-homepage' %}'">{{request.session.customer_name}}</button>
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+      {% elif request.session.user == 'YogaVitalGym' and request.session.gym_designation == 'Admin' %}
+      <button class="btn btn-success animated-button" onclick="window.location.href='{% url 'Gym_Staff:administrator-homepage' %}'">{{request.session.gym_name}}</button>
+      <button class="btn btn-success animated-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+      {% elif request.session.user == 'YogaVitalGym' and request.session.gym_designation == 'Trainer' %}
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'Gym_Staff:trainer-homepage' %}'">{{request.session.gym_name}}</button>
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+      {% elif request.session.user == 'YogaVitalGym' and request.session.gym_designation == 'Instructor' %}
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'Gym_Staff:instructor-homepage' %}'">{{request.session.gym_name}}</button>
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+      {% elif request.session.user == 'YogaVitalGym' and request.session.gym_designation == 'Dietician' %}
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'Gym_Staff:dietician-homepage' %}'">{{request.session.gym_name}}</button>
+      <button class="btn btn-success ms-5 animated-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+      {% endif %}
+      <form action= "{% url 'Gym_Staff:administrator-homepage' %}" class="d-flex" role="search" method="GET">
+        <input id="search-field" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

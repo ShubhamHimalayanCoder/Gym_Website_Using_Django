@@ -1,0 +1,76 @@
+#section-1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section-heading{
+    text-align: center;
+    margin-top: 350px;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 100px;
+}
+
+#login-form-section{
+    width: 95%;
+}
+ 
+.left-side img{
+    width: 900px;
+    height: 600px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.right-side{
+    width: 800px;
+    height: 600px;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.elements{
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 900px;
+}
+
+.elements label{
+    margin-left: 100px;
+}
+
+.right-side input{
+    width: 550px;
+    height: 60px;
+    font-size: 25px;
+    margin-left: 13%;
+}
+
+.elements select{
+    width: 550px;
+    height: 60px;
+    margin-left: 13%;
+    font-size: 25px;
+}
+
+.elements div{
+    display: flex;
+}
+
+.elements button{
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-1{
+    margin-left: 14%;
+    margin-right: 60px;
+    width: 250px;
+}

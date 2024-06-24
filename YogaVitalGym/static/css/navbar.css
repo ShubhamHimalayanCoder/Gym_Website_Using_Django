@@ -1,0 +1,106 @@
+.navbar{
+    position: absolute;
+    z-index: 1;
+}
+
+span{
+    color: greenyellow;
+    font-size: 45px;
+}
+
+.navbar a{
+    color: whitesmoke;
+    font-size: 25px;
+    font-family:cursive;
+}
+
+.navbar a:hover{
+    color: red;
+}
+
+#dropdown a{
+    color: whitesmoke;
+}
+
+#dropdown a:hover{
+    color: red;
+}
+
+.dropdown-menu{
+    background-color: #333;
+}
+
+.dropdown-menu:hover{
+    background-color: #333;
+}
+
+.dropdown-item:hover{
+    background-color: #333;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}
+
+.collapse li{
+    margin: 15px;
+}
+
+.animated-button {
+    position: relative;
+    color: white;
+    font-family: cursive;
+    border: none;
+    padding: 10px 30px;
+    font-size: 17px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.5s ease;
+    margin-right: 3%;
+    width: auto;
+}
+
+.animated-button::before,
+.animated-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: darkgreen;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.animated-button::before {
+    left: 0;
+    transform: translateX(0);
+}
+
+.animated-button::after {
+    right: 0;
+    transform: translateX(0);
+}
+
+.animated-button:hover::before {
+    transform: translateX(-100%);
+}
+
+.animated-button:hover::after {
+    transform: translateX(100%);
+}
+
+.animated-button:hover {
+    background-color: #F5F5DC;
+    color: black;
+}
+
+#search-field{
+    margin-left: 10px;
+    width: 45%;
+}
+
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='whitesmoke' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

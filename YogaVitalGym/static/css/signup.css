@@ -1,0 +1,61 @@
+#section-1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section-heading{
+    text-align: center;
+    margin-top: 350px;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 100px;
+}
+ 
+.left-side img{
+    width: 900px;
+    height: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    /* border: 2px solid blue; */
+}
+
+.right-side{
+    width: 900px;
+    height: 800px;
+    margin-top: 30px;
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: cursive;
+    /* border: 2px solid red; */
+}
+
+.elements{
+    margin-top: 20px;
+    width: 900px;
+}
+.right-side input{
+    margin-left: 30px;
+    width: 550px;
+}
+
+#signup-form-section{
+    width: 99%;
+}
+
+.elements select{
+    width: 550px;
+    margin-left: 30px;
+}
+
+.elements button{
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50%;
+
+}
+
+

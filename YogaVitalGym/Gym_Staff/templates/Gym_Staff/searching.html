@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | YogaVitalGym</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/searching.css' %}">
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+
+
+    <section id="section-1" style="background-image: url('{% static 'images/signup/1.jpg' %}');">
+        <div class="section-heading">
+            <p>Search Result Page</p>
+        </div>
+    </section>
+
+
+    {% for customer in gym_customers_data %}
+            <div>
+                <div class="patient-card">
+                    <div class="left-side">
+                        <span><b>Customer ID : </b>{{customer.customer_id}}</span>
+                        <div>
+                            {% if customer.customer_image %}
+                            <img src="{{customer.customer_image.url}}" alt="{{customer.customer_image.title}}">
+                            {% else %}
+                            <img src="{% static 'images/profile-photo-placeholder.jpg' %}" alt="placeholder-image">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="d-flex justify-content-between"> 
+                        <h2>{{customer.customer_name}}</h2>
+                                <div class="alter-btn">
+                                    {% if request.session.gym_designation == 'Admin' %}
+                                        <a class="edit" href="{% url 'Gym_Customers:update-account' %}"><i class="bi bi-pencil-square"></i></a>
+                                        <a class="delete" href="{% url 'Gym_Customers:delete-customer-account' id=customer.customer_id %}"><i class="bi bi-trash"></i></a>
+                                    {% endif %}
+                                </div>
+                        </div>
+                        <div class="details">
+                            <p>
+                                <span><b>Address : </b>{{customer.customer_address}},{{customer.customer_city}},{{customer.customer_state}},{{customer.customer_country}},{{customer.customer_pin}}</span>
+                            </p>
+                            <p>
+                                <span><b>Mobile : </b>{{customer.customer_mobile}}<br>
+                                <b>Email : </b>{{customer.customer_email}}</span>
+                            </p>
+                            <p>
+                                <span><b>Customer Services :</b>{{customer.customer_services}}</span>
+                            </p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

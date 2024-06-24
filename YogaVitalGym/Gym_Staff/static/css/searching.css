@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+main{
+    margin: 2% 5%;
+}
+.patient-card{
+    display: flex;
+    background-color: #e6ebf6;
+    border-radius: 1em;
+    transition: transform 0.2s;
+    margin: 3% 5%;
+    width: 90%;
+    height: 600px;
+}
+.patient-card p , .left-side span, .right-side span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    color: black;
+    
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    color: black;
+    font-size: 25px;
+    font-family: cursive;
+    border-right: 2px dashed green;
+}
+
+.left-side img{
+    border-radius: 0.7em;
+    width: 10em;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 2px solid black;
+}
+
+.right-side h2{
+    font-family: "Courgette", cursive;
+    font-size: 5em;
+    color: #135D66;
+    margin-left: 10%;
+}
+
+
+.right-side{
+    padding: 3% 7% 2% 3%;
+}
+
+.details{
+    width: 100%;
+    margin-left: 50px;
+    font-family: cursive;
+    font-size: 25px;
+    color: black;
+}
+
+.details p{
+    margin-top: 30px;
+}
+
+
+
+main h1{
+    text-align: center;
+    color: #135D66;
+    font-size: 4em;
+    margin-bottom: 2%;
+}
+.patient-card:hover{
+    outline: 2px solid red;
+    transform: scale(1.01);
+    box-shadow: rgba(184, 19, 19, 0.86) 0px 10px 20px, rgba(154, 12, 12, 0.643) 0px 6px 6px;
+}
+.alter-btn a{
+    display: flex;
+    font-size: 2em;
+    margin: 0.2em;
+    padding: 0.3em;
+    color: white;
+    border-radius: 0.2em;
+    transition: all 0.2s;
+}
+.delete{
+    background-color: #C73659;
+}
+
+.edit{
+    background-color: #006769;
+}
+.alter-btn a:hover{
+    background-color: white;
+    color: #687d7f;
+}
+
+
+#section-1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section-heading{
+    text-align: center;
+    margin-top: 350px;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 100px;
+}
+
+
+    
+.alter-btn{
+    margin-left: 70%;
+}

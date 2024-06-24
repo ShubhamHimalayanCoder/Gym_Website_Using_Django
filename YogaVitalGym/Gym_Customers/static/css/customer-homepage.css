@@ -1,0 +1,250 @@
+#section-1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section-heading{
+    text-align: center;
+    margin-top: 350px;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 100px;
+}
+
+.nav-tabs{
+    background-color: gainsboro;
+    font-size: 30px;
+    font-family: cursive;
+    color: black;
+}
+
+.nav-tabs .nav-link{
+    color: black;
+}
+
+.nav-link.active{
+    background-color: lightskyblue;
+}
+.tab-content{
+    background-color: whitesmoke;
+}
+
+.info-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    height: auto;
+}
+
+/* .info-container b{
+    width: 500px;
+    border: 2px solid greenyellow;
+} */
+#data-label{
+    width: 350px;
+    font-size: 25px;
+    color: black;
+    /* border: 2px solid blue; */
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    height: 710px;
+    padding: 2em;
+    /* margin-top: 30px; */
+    color: black;
+    font-size: 25px;
+    font-family: cursive;
+    border-right: 2px dashed #687d7f;
+}
+
+.left-side img{
+    border-radius: 0.7em;
+    width: 10em;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 200px;
+    border: 2px solid black;
+}
+    
+.photo-upload{
+    margin-top: 70px;
+    width: 80%;
+}
+
+.right-side{
+    padding: 3% 7% 2% 3%;
+}
+
+.right-side h1{
+    font-family: cursive;
+    color: black;
+}
+
+.details{
+    width: 80%;
+    margin-top: 60px;
+    margin-left: 80px;
+    font-family: cursive;
+    font-size: 25px;
+    color: black;
+    /* border: 2px solid red; */
+}
+
+.details p{
+    margin-top: 60px;
+}
+
+.alter-btn{
+    margin-left: 70%;
+}
+.alter-btn a{
+    font-size: 2em;
+    margin: 0.2em;
+    padding: 0.3em;
+    color: white;
+    border-radius: 0.2em;
+    transition: all 0.2s;
+}
+
+.delete{
+    background-color: #C73659;
+}
+
+.edit{
+    background-color: #006769;
+}
+
+.alter-btn a:hover{
+    background-color: gray;
+    color: black;
+}
+
+#course{
+    height: 710px;
+}
+
+#course .left-side{
+    border: none;
+    margin-top: 0px;
+}
+
+#course .alter-btn{
+    width: auto;
+    margin-left: 80%;
+    margin-top: 80px;
+}
+
+#notifications{
+    height: auto;
+}
+
+.notification-card{
+    width: 80%;
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+#queries{
+    height: auto;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-left: 30%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 30px;
+    font-family: cursive;
+    display: block;
+}
+
+#recipient{
+    width: 18%;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+#query-subject{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+
+textarea {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+#feedback{
+    height: auto;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-left: 30%;
+}
+
+.rating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    /* flex-direction: column-reverse; */
+    /* margin-left: 10%; */
+    margin-bottom: 3%;
+    width: 350px;
+
+}
+  
+.rating input {
+    display: none;
+}
+  
+.rating label {
+    cursor: pointer;
+    width: 60px;
+    font-size: 60px;
+    color: #ddd;
+    float: left;
+}
+
+.rating label:before {
+    content: '\2605'; /* Unicode character for a star */
+}
+
+.rating input:checked ~ label {
+    color: #f90; /* Color for the selected stars */
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: cursive;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-left: 28%;
+    margin-bottom: 5%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

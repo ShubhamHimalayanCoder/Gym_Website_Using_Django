@@ -1,0 +1,204 @@
+.body-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#home_img_1{
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#join-learn-btn{
+    position :absolute;
+    border: 2px solid violet;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}
+
+#join-button {
+    position: absolute;
+    transform: translate(100%, 650%);
+    z-index: 1;
+    font-size: 30px;
+    font-family: cursive;
+    background-color: red;
+    color: whitesmoke;
+}
+
+#join-button:hover{
+    color: red;
+    background-color: black;
+}
+
+#learn-button {
+    position: absolute;
+    transform: translate(210%, 650%);
+    z-index: 1;
+    font-size: 30px;
+    font-family: cursive;
+    background-color: whitesmoke;
+    color: black;
+    }
+    
+#learn-button:hover{
+    background-color: black;
+    color: red;
+}
+
+.parent-card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 98%;
+    margin-left: 5%;
+}
+
+#card-1 {
+    position: absolute;
+    transform: translate(0%, -40%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 370px;
+    height: 380px;
+}
+
+#card-1 img{
+    width: 200px;
+    height: 200px;
+    margin-left: 60px;
+}
+
+#card-body-1{
+    font-size: 20px;
+    font-family: cursive;
+}
+
+#card-title-1{
+    font-size: 30px;
+    text-align: center;
+}
+
+.home-container-1{
+    display: flex;
+    color: whitesmoke;
+    margin-top: 450px;
+    width: 98%;
+    height: auto;
+}
+
+.container-left{
+    width: 100%;
+    margin-left: 10%;
+}
+
+.container-left img{
+    width: 100%;
+    height: 100%;
+}
+
+.container-right{
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    margin-left: 5%;
+}
+
+.home-container-1-list{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+
+#testimonials{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.testimonials{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 60px;
+    font-family: cursive;
+    color: black;
+    text-align: center;
+    background-color: whitesmoke;
+    padding-top: 3%;
+}
+
+#testimonials p{
+    margin-left: 35%;
+}
+
+#testimonials-container{
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 30px;
+}
+
+.test-image{
+    width: 30%;
+    height: 20%;
+    margin-left: 10%;
+}
+
+.test-image img{
+    width: 100%;
+    height: 30%;
+}
+
+.test-text{
+    width: 50%;
+    height: auto;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.blog-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 60px;
+}
+
+#card-2{
+    width: 25rem;
+    height: 40rem;
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+#card-2:hover #card-title-2{
+    color: red;
+    font-family: cursive;
+}
+
+#card-2 img{
+    width: 400px;
+    height: 300px;
+    margin-top: -1px;
+    margin-left: -13px;
+}
+    
+#card-2 a{
+        text-decoration: none;
+        color: black;
+}
+
+#card-title-2{
+    font-size: 30;
+    margin-bottom: 20px;
+}

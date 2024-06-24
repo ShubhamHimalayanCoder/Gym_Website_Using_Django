@@ -1,0 +1,142 @@
+
+#section{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container{
+    text-align: center;
+    margin-top: 350px;
+    color: whitesmoke;
+    font-family: cursive;
+    font-size: 100px;
+}
+    
+.about-container{
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.leftside-img{
+    width: auto;
+    height: auto;
+}
+
+.leftside-img img{
+    width: 600px;
+    height: 600px;
+}
+
+.rightside-content{
+    font-size: 40px;
+    color: whitesmoke;
+    font-style: oblique;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.services{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 60px;
+    font-family: cursive;
+    color: black;
+    text-align: center;
+    background-color: whitesmoke;
+    padding-top: 3%;
+}
+
+.text-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    font-size: 40px;
+}
+    
+.slide {
+    width: auto;
+    height: auto; 
+    display: none;
+    margin-left : 3%;
+    margin-right : 3%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+    
+.active {
+    display: flex;
+}
+
+.carousel-img{
+    width: 800px;
+    height: 600px;
+}
+  
+.carousel-img img{
+    width: 750px;
+    height: 600px;
+}
+      
+.slide .text{
+    margin-left: 40px;
+}
+          
+.approach{
+    color: whitesmoke;
+    font-size: 60px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.approach-details{
+    text-align: justify;
+    font-family: cursive;
+    font-size: 40px;
+    margin-left: 40px;
+    width: 95%;
+}
+
+.approach-details img{
+    width: 590px;
+    height: 500px;
+    display: inline;
+}
+
+.text-img{
+    width: 750px;
+    height: 600px;
+}
+
+.text-img img{
+    width: 750px;
+    height: 600px;
+}
+    
+.services .texts{
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.text{
+    margin-top: 50px;
+}
+
+.get-start img{
+    width: 540px;
+    height: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    display: inline;
+}
+
+.get-start p{
+    font-size: 40px;
+    margin: 5%;
+}

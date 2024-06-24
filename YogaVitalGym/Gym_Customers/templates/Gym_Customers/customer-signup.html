@@ -1,0 +1,166 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up | YogaVitalGym</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/customer-signup.css' %}">
+</head>
+  <body>
+    
+    {% include 'navbar.html' %}
+
+    <section id="section-1" style="background-image: url('{% static 'images/signup/1.jpg' %}');">
+        <div class="section-heading">
+            <p>Sign Up</p>
+        </div>
+    </section>
+
+    <section id="signup-form-section">
+        <div class="row">
+            <div class="col-md-6 left-side">
+                <img src="{% static 'images/signup/2.jpg' %}" alt="signup-image">
+            </div>
+            <div class="col-md-6 right-side">
+                <form class="row" action="{% url 'Gym_Customers:customer-signup' %}" method="POST" id="customer-signup-form">
+                    {% csrf_token %}
+
+                    {% if error == 'empty-fields' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Empty Fields</strong> You should check in on some of those fields below.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+                        
+                    {% if success == 'done' %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Congratulations</strong> Signup is successfull.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <div class="row elements">
+                        <label for="inputFullName" class="col-md-4 form-label">Full Name</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputFullName",pattern="[A-Z]+[a-z]+", name="full_name">
+                        </div>
+                    </div>
+
+                    {% if error == 'mobile-error' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>ERROR</strong> Mobile already registered.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <div class="row elements">
+                        <label for="inputMobile" class="col-md-4 form-label">Mobile</label>
+                        <div class="col-md-8">
+                            <input type="tel" class="form-control" id="inputMobile", maxlength="10", name="mobile">
+                        </div>
+                    </div>
+
+                    {% if error == 'email-error' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>ERROR</strong> Email already registered.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <div class="row elements">
+                        <label for="inputEmail" class="col-md-4 form-label">Email</label>
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" id="inputEmail", name="email">
+                        </div>
+                    </div>
+                    <div class="row elements">
+                        <label for="inputPassword" class="col-md-4 form-label">Password</label>
+                        <div class="col-md-8">
+                            <input type="password" class="form-control" id="inputPassword", maxlength="20", name="password">
+                        </div>
+                    </div>
+
+                    {% if error == 'password-mismatch' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>ERROR</strong> Password and Confirm Password did not match.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <div class="row elements">
+                        <label for="inputConfirmPassword" class="col-md-4 form-label">Confirm Password</label>
+                        <div class="col-md-8">
+                            <input type="password" class="form-control" id="inputConfirmPassword", maxlength="20", name="confirm_password">
+                        </div>
+                    </div>
+                    <div class="row elements">
+                        <label for="inputAddress" class="col-md-4 form-label">Address</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputAddress", name="address">
+                        </div>
+                    </div>
+                    <div class="row elements">
+                        <label for="inputCity" class="col-md-4 form-label">City</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputCity", name="city">
+                        </div>
+                    </div>
+                    <div class="row elements">
+                        <label for="inputState" class="col-md-4 form-label">State</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputState", name="state">
+                        </div>
+                    </div>
+                    <div class="row elements">
+                        <label for="inputCountry" class="col-md-4 form-label">Country</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputCountry", name="country">
+                        </div>
+                    </div>
+                    <div class="row elements">
+                        <label for="inputPIN" class="col-md-4 form-label">PIN</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputPIN", maxlength="6", name="pin">
+                        </div>
+                    </div>
+
+                    {% if error == 'no-option' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>ERROR</strong> Select any one option from below.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <div class="row elements">
+                        <label for="inputUser" class="col-md-4 form-label">Opting For</label>
+                        <div class="col-md-8 check-box">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Gym", name="Gym">
+                                <label class="form-check-label" for="inlineCheckbox1">Gym</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Yoga", name="Yoga">
+                                <label class="form-check-label" for="inlineCheckbox2">Yoga</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Diet-Planning", name="Diet-Planning">
+                                <label class="form-check-label" for="inlineCheckbox3">Diet Planning</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 elements">
+                        <button type="submit" class="btn btn-primary">Sign Up</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

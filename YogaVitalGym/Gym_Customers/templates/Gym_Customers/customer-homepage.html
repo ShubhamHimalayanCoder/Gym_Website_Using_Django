@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details | YogaVitalGym</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/customer-homepage.css' %}">
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <section id="section-1" style="background-image: url('{% static 'images/signup/1.jpg' %}');">
+        <div class="section-heading">
+            <p>Customer Page</p>
+        </div>
+    </section>
+
+
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="course-tab" data-bs-toggle="tab" data-bs-target="#course-tab-pane" type="button" role="tab" aria-controls="course-tab-pane" aria-selected="false">Course Details</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="queries-tab" data-bs-toggle="tab" data-bs-target="#queries-tab-pane" type="button" role="tab" aria-controls="queries-tab-pane" aria-selected="false">Queries</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications-tab-pane" type="button" role="tab" aria-controls="notifications-tab-pane" aria-selected="false">Query Response</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="feedback-tab" data-bs-toggle="tab" data-bs-target="#feedback-tab-pane" type="button" role="tab" aria-controls="feedback-tab-pane" aria-selected="false">Feedback</button>
+        </li>
+      </ul>
+
+
+
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">     
+                <section id="customer-information">
+                    <div class="row info-container">
+                        <div class="col-md-6 left-side">
+                            <p>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Customer ID : </b></section><section id="data-label">{{customer_data.customer_id}}</section></section><br>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Customer Name : </b></section><section id="data-label" class="col-md-6">{{customer_data.customer_name}}</section></section>
+                            </p>
+                            {% if customer_data.customer_image %}
+                            <img src="{{customer_data.customer_image.url}}" alt="{{customer_data.customer_image.title}}">
+                            {% else %}
+                            <img src="{% static 'images/profile-photo-placeholder.jpg' %}" alt="placeholder-image">
+                            {% endif %}
+                            <form action="{% url 'Gym_Customers:customer-homepage' %}" method="POST" id="photo-form" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group mb-3 photo-upload">
+                                    <input type="hidden" name="customer_id" value="{{customer_data.customer_id}}">
+                                    <input type="file" class="form-control" id="photo-file" aria-describedby="photo" aria-label="Upload" name="image">
+                                    <button class="btn btn-outline-primary" type="submit" id="photo">Update Photo</button>
+                                </div>
+                            </form>
+                        </div>       
+                        <div class="col-md-6 right-side">
+                            <div class="d-flex justify-content-between"> 
+                                <h1>Customer Details</h1>
+                            </div>
+                            <div class="alter-btn">
+                                <a class="edit" href="{% url 'Gym_Customers:update-account' %}"><i class="bi bi-pencil-square"></i></a>
+                                <a class="delete" href="{% url 'Gym_Customers:delete-account' %}"><i class="bi bi-trash"></i></a>
+                            </div>
+                            <div class="details">
+                                <p>
+                                    <section class="row"><section id="data-label" class="col-md-6"><b>Email : </b></section><section id="data-label" class="col-md-6">{{customer_data.customer_email}}</section></section> 
+                                </p>
+                                <p>
+                                    <section class="row"><section id="data-label" class="col-md-6"><b>Mobile : </b></section><section id="data-label" class="col-md-6">{{customer_data.customer_mobile}}</section></section> 
+                                </p>
+                                <p>
+                                    <section class="row"><section id="data-label" class="col-md-6"><b>Address: </b></section><section id="data-label" class="col-md-6">{{customer_data.customer_address}}, {{customer_data.customer_city}}, {{customer_data.customer_state}}, {{customer_data.customer_country}}, {{customer_data.customer_pin}}</section></section>
+                                </p>                    
+                            </div>
+                        </div>
+                    </div>
+                </section>       
+        </div>
+
+
+        <div class="tab-pane fade" id="course-tab-pane" role="tabpanel" aria-labelledby="course-tab" tabindex="0">        
+                <section id="course">
+                    <div class="row info-container">
+                        <div class="alter-btn">
+                            <a class="edit" href="{% url 'Gym_Customers:update-account' %}"><i class="bi bi-pencil-square"></i></a>
+                        </div>
+                        <div class="col-md-12 left-side">
+                            <p>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Customer Course: </b></section><section id="data-label" class="col-md-6">{{customer_data.customer_services}}</section></section>
+                            </p>
+                            {% for staff in staff_data %}     
+                            {% if staff.staff_user_designation == 'Trainer' %}                           
+                            <p>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Trainer : </b></section><section id="data-label" class="col-md-6">{{staff.staff_user_name}}</section></section>
+                            </p>
+                            {% endif %}
+                            {% if staff.staff_user_designation == 'Instructor' %}                           
+                            <p>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Instructor : </b></section><section id="data-label" class="col-md-6">{{staff.staff_user_name}}</section></section>
+                            </p>
+                            {% endif %}
+                            {% if staff.staff_user_designation == 'Dietician' %}                           
+                            <p>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Dietician : </b></section><section id="data-label" class="col-md-6">{{staff.staff_user_name}}</section></section>
+                            </p>
+                            {% endif %}
+                            {% endfor %}
+                        </div>         
+                    </div>
+                </section>
+        </div>
+
+
+        
+        <div class="tab-pane fade" id="queries-tab-pane" role="tabpanel" aria-labelledby="queries-tab" tabindex="0">
+            {% block content %}
+            <section id="queries">
+                <form action="{% url 'Gym_Customers:submit-query' %}" method="POST" id="query-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="recipient"><b>Send To :</b></label>
+                    <select id="recipient" class="form-select" name="recipient">
+                        <option value="" selected>Choose...</option>
+                        {% for staff in staff_data %}
+                        <option value="{{staff.staff_user_id}}">{{staff.staff_user_name}} - {{staff.staff_user_designation}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="query-subject"><b>Subject :</b></label>
+                    <input type="text" id="query-subject" name="subject">
+                    <label for="message"><b>Message :</b></label>
+                    <textarea id="message" rows="10" name="query"></textarea>
+                </div>
+                <button type="submit" id="submit-btn">Submit</button>    
+                </form>
+            </section>
+            {% endblock %}
+        </div>
+
+
+
+        <div class="tab-pane fade" id="notifications-tab-pane" role="tabpanel" aria-labelledby="notifications-tab" tabindex="0">   
+            {% for response in query_response %}
+            <section id="notifications">
+                <div class="card mb-3 notification-card">
+                    <div class="row g-0">
+                      <div class="col-md-12">
+                        <div class="card-body">
+                          <h5 class="card-title">{{response.query.query_subject}}</h5>
+                          <p class="card-text">Query : {{response.query.query_text}}</p>
+                          <p class="card-text">Response : {{response.response_text}}</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated {{response.created_at}}</small></p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+        </div>
+
+        
+
+        <div class="tab-pane fade" id="feedback-tab-pane" role="tabpanel" aria-labelledby="feedback-tab" tabindex="0">
+            {% block content1 %}
+            <section id="feedback">
+                <form action="{% url 'Gym_Customers:submit-feedback' %}" method="POST" id="feedback-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="message"><b>Feedback :</b></label>
+                        <textarea id="message" rows="10" name="message"></textarea>
+                    </div>
+                    <label for="rating"><b>Rating : </b></label>
+                    <div class="rating" id="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                    </div>
+                    <div>  
+                        <button type="submit" id="submit-btn">Submit</button>
+                    </div>    
+                </form>
+            </section>
+            {% endblock %}
+        </div>
+      </div>
+
+
+
+
+
+    
+
+
+
+    
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

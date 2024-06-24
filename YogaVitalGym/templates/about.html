@@ -1,0 +1,166 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us | YogaVitalGym</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    <section id="section" style="background-image: url('{% static 'images/about/1.jpg' %}');">
+        <div class="container">
+            <p>About Us</p>
+        </div>
+    </section>
+
+    <section id="after-section">
+        <div class="row about-container">
+            <div class="col-md-6 leftside-img">
+                <img src="{% static 'images/about/2.jpg' %}" alt="leftside-img">
+            </div>
+            <div class="col-md-6 rightside-content">
+                Welcome to YogaVitalGym, your holistic destination for fitness, wellness, and nutrition. At
+                YogaVitalGym, we believe that true health encompasses not only physical fitness but also mental
+                well-being and nutritional balance. Our mission is to empower individuals to lead healthier, happier
+                lives through a comprehensive approach to wellness.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="services">
+            <p>Our Services</p>
+            <div class="text-carousel">
+                <div class="row slide active">
+                    <div class="col-md-6 text">
+                        <b>Gym Facilities:</b><br>
+                        Our state-of-the-art gym facilities are designed to cater to individuals of all fitness levels.
+                        Whether you're a seasoned athlete or just beginning your fitness journey, our expert trainers
+                        and diverse equipment selection are here to support you in achieving your fitness goals.
+                    </div>
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'images/about/3.jpg' %}" alt="carousel-img 1">
+                    </div>
+                </div>
+                <div class="row slide">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'images/about/4.jpg' %}" alt="carousel-img 2">
+                    </div>
+                    <div class="col-md-6 text">
+                        <b>Yoga Classes:</b><br>
+                        Experience the transformative power of yoga with our range of classes suitable for all ages and
+                        abilities. From dynamic vinyasa flows to restorative in sessions, our certified instructors will
+                        guide you through practices that nurture both body and mind, promoting flexibility, strength,
+                        and inner peace.
+                    </div>
+                </div>
+                <div class="row slide">
+                    <div class="col-md-6 text">
+                        <b>Diet Plan Services:</b><br>
+                        Nutrition plays a crucial role in overall health and fitness. Our team of nutritionists and
+                        dietitians will work with you to create personalized diet plans tailored to your unique needs
+                        and goals. Whether you're looking to lose weight, gain muscle, or simply improve your eating
+                        habits, we'll provide the guidance and support you need to make sustainable, healthy choices.
+                    </div>
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'images/about/5.jpg' %}" alt="carousel-img 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="approach">
+            <p>Our Approach</p>
+            <div class="col-md-10 approach-details">
+                <p>At YogaVitalGym, we prioritize individualized care and attention to ensure that each client
+                    receives the support they need to succeed. Our experienced team is dedicated to fostering a
+                    supportive and inclusive community where everyone feels welcome and empowered to prioritize their
+                    well-being.
+                </p>
+                <img src="{% static 'images/about/6.jpg' %}" alt="trainer-img">
+                <img src="{% static 'images/about/7.jpg' %}" alt="yoga-img">
+                <img src="{% static 'images/about/8.jpg' %}" alt="diet-img">
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="services">
+            <p>Why Choose Us ?</p>
+            <div class="texts">
+                <div class="row">
+                    <div class="col-md-6 text">
+                        <b>Expertise:</b><br>
+                        Our team consists of certified professionals with years of experience in their respective
+                        fields, ensuring that you receive the highest quality of care and instruction.
+                    </div>
+                    <div class="col-md-6 text-img">
+                        <img src="{% static 'images/about/9.jpg' %}" alt="carousel-img 1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 text">
+                        <b>Comprehensive Approach:</b><br>
+                        We take a holistic approach to wellness, addressing the physical, mental,
+                        and nutritional aspects of health to help you achieve sustainable results.
+                    </div>
+                    <div class="col-md-6 text-img">
+                        <img src="{% static 'images/about/10.jpg' %}" alt="carousel-img 2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 text">
+                        <b>Community:</b><br>
+                        Join a supportive community of like-minded individuals who share your commitment to
+                        health and wellness. Whether you're sweating it out in the gym, flowing through yoga poses, or
+                        sharing nutrition tips, you'll find camaraderie and encouragement every step of the way.
+                    </div>
+                    <div class="col-md-6 text-img">
+                        <img src="{% static 'images/about/11.jpg' %}" alt="carousel-img 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="get-started approach">
+            <p>Get Started Today</p>
+            <div class="col-md-12 get-start">
+                <img src="{% static 'images/about/12.jpg' %}" alt="get-started-img">
+                <img src="{% static 'images/about/13.jpg' %}" alt="get-started-img">
+                <img src="{% static 'images/about/14.jpg' %}" alt="get-started-img">
+                <p>
+                    Embark on your journey to a healthier, happier you with YogaVitalGym. Whether you're looking to
+                    build strength, find balance, or revamp your eating habits, we're here to support you every step of
+                    the way. Contact us today to learn more about our services and start your wellness journey with us.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    {% include 'footer.html' %}
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/about.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
