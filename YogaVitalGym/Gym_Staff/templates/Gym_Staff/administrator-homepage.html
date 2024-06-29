@@ -223,9 +223,9 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="about-image"><b>About Image :</b></label>
-                        <input id="about-image"  name="about_image"></input>
+                        <input type="text" id="about-image"  name="about_image"></input>
                     </div>
-                    <div class="input-group mb-3 photo-upload">
+                    <div class="input-group mb-3 photo">
                         <input type="file" class="form-control" id="photo-file" aria-describedby="photo" aria-label="Upload" name="gallery_image">
                     </div>
                     <div>  
@@ -238,21 +238,18 @@
 
 
         <div class="tab-pane fade" id="blog-tab-pane" role="tabpanel" aria-labelledby="blog-tab" tabindex="0">
-            <section id="feedback">
+            <section id="blog">
                 {% block content4 %}
                 <form action="" method="POST" id="query-form">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="message"><b>Feedback :</b></label>
-                        <textarea id="message" rows="10" name="message"></textarea>
+                        <label for="blog-title"><b>Blog Title :</b></label>
+                        <input type="text" id="blog-title"  name="blog-title"></input>
+                        <label for="blog-text"><b>Blog Text :</b></label>
+                        <textarea id="blog-text" rows="10" name="blog-text"></textarea>
                     </div>
-                    <label for="rating"><b>Rating : </b></label>
-                    <div class="rating" id="rating">
-                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars"></label>
-                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"></label>
-                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"></label>
-                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"></label>
-                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                    <div class="input-group mb-3 photo">
+                        <input type="file" class="form-control" id="photo-file" aria-describedby="photo" aria-label="Upload" name="blog_image">
                     </div>
                     <div>  
                         <button type="submit" id="submit-btn">Submit</button>

@@ -7,7 +7,7 @@
     <title>Instructor Page | YogaVitalGym</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/customer-homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/staff_pages.css' %}">
 
 </head>
 <body>
@@ -20,6 +20,7 @@
             <p>Gym Instructor Page</p>
         </div>
     </section>
+
 
 
 
@@ -82,7 +83,7 @@
                         </div>
 
                         <div class="alter-btn">
-                            <a class="edit" href="#"><i class="bi bi-pencil-square"></i></a>
+                            <a class="edit" href="{% url 'Gym_Staff:update-staff-account' %}"><i class="bi bi-pencil-square"></i></a>
                             <a class="delete" href="{% url 'Gym_Staff:delete-staff-account' %}"><i class="bi bi-trash"></i></a>
                         </div>
 
@@ -95,9 +96,7 @@
                             </p>
                             <p>
                                 <section class="row"><section id="data-label" class="col-md-6"><b>Address: </b></section><section id="data-label" class="col-md-6">{{gym_user_data.staff_user_address}}, {{gym_user_data.staff_user_city}}, {{gym_user_data.staff_user_state}}, {{gym_user_data.staff_user_country}}, {{gym_user_data.staff_user_pin}}</section></section>
-                            </p>
-                            
-                            
+                            </p>                           
                         </div>
                     </div>
                 </div>
@@ -106,11 +105,12 @@
 
 
         <div class="tab-pane fade" id="customer-tab-pane" role="tabpanel" aria-labelledby="customer-tab" tabindex="0">
+            <a class="btn btn-info btn-lg" type="button" aria-expanded="false" href="{% url 'Gym_Staff:to-excel' %}" style="margin-top: 5%; margin-left: 5%;">Export to xlsx</a></span>
             {% for customers in gym_customers_data %}
                 <section id="course">
                     <div class="row info-container">
                         <div class="alter-btn">
-                            <a class="edit" href="#"><i class="bi bi-pencil-square"></i></a>
+                            <a class="delete" href="{% url 'Gym_Customers:delete-customer-account' id=customers.customer_id %}"><i class="bi bi-trash"></i></a>
                         </div>
                         <div class="col-md-12 left-side">
                             <p>
@@ -120,10 +120,7 @@
                                 <section class="row"><section id="data-label" class="col-md-6"><b>Customer Name : </b></section><section id="data-label" class="col-md-6">{{customers.customer_name}}</section></section>
                             </p>
                             <p>
-                                <section class="row"><section id="data-label" class="col-md-6"><b>Instructor : </b></section><section id="data-label" class="col-md-6"></section></section>
-                            </p>
-                            <p>
-                                <section class="row"><section id="data-label" class="col-md-6"><b>Dietician : </b></section><section id="data-label" class="col-md-6"></section></section>
+                                <section class="row"><section id="data-label" class="col-md-6"><b>Course Details : </b></section><section id="data-label" class="col-md-6">{{customers.customer_services}}</section></section>
                             </p>
                         </div>
             
@@ -221,49 +218,45 @@
 
 
         <div class="tab-pane fade" id="gallery-tab-pane" role="tabpanel" aria-labelledby="gallery-tab" tabindex="0">
-            <section id="feedback">
+            <section id="gallery">
+                {% block content3 %}
                 <form action="" method="POST" id="query-form">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="message"><b>Feedback :</b></label>
-                        <textarea id="message" rows="10" name="message"></textarea>
+                        <label for="about-image"><b>About Image :</b></label>
+                        <input type="text" id="about-image"  name="about_image"></input>
                     </div>
-                    <label for="rating"><b>Rating : </b></label>
-                    <div class="rating" id="rating">
-                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars"></label>
-                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"></label>
-                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"></label>
-                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"></label>
-                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                    <div class="input-group mb-3 photo">
+                        <input type="file" class="form-control" id="photo-file" aria-describedby="photo" aria-label="Upload" name="gallery_image">
                     </div>
                     <div>  
                         <button type="submit" id="submit-btn">Submit</button>
                     </div>    
                 </form>
+                {% endblock %}
             </section>
         </div>
 
 
         <div class="tab-pane fade" id="blog-tab-pane" role="tabpanel" aria-labelledby="blog-tab" tabindex="0">
-            <section id="feedback">
+            <section id="blog">
+                {% block content4 %}
                 <form action="" method="POST" id="query-form">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="message"><b>Feedback :</b></label>
-                        <textarea id="message" rows="10" name="message"></textarea>
+                        <label for="blog-title"><b>Blog Title :</b></label>
+                        <input type="text" id="blog-title"  name="blog-title"></input>
+                        <label for="blog-text"><b>Blog Text :</b></label>
+                        <textarea id="blog-text" rows="10" name="blog-text"></textarea>
                     </div>
-                    <label for="rating"><b>Rating : </b></label>
-                    <div class="rating" id="rating">
-                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars"></label>
-                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"></label>
-                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"></label>
-                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"></label>
-                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                    <div class="input-group mb-3 photo">
+                        <input type="file" class="form-control" id="photo-file" aria-describedby="photo" aria-label="Upload" name="blog_image">
                     </div>
                     <div>  
                         <button type="submit" id="submit-btn">Submit</button>
                     </div>    
                 </form>
+                {% endblock %}
             </section>
         </div>
     </div>

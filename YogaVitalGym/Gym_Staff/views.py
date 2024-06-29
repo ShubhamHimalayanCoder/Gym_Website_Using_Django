@@ -46,7 +46,7 @@ def gym_signup(request):
                                                                 staff_user_designation = designation)
                             return render(request, 'Gym_Staff/gym-signup.html', context={'success' : 'done'})
                         except IntegrityError as e:
-                            if 'user_mobile' in str(e):
+                            if 'staff_user_mobile' in str(e):
                                 error = {
                                     'error' : 'mobile-error'
                                 }
