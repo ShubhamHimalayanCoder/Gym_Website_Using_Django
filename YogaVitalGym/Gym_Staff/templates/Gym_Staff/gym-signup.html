@@ -62,7 +62,7 @@
                     <div class="row elements">
                         <label for="inputMobile" class="col-md-4 form-label">Mobile</label>
                         <div class="col-md-8">
-                            <input type="tel" class="form-control" id="inputMobile" maxlength="10" name="mobile">
+                            <input type="tel" class="form-control" id="inputMobile" maxlength="10" name="mobile" pattern="[0-9]*" title="Enter Only Numbers">
                         </div>
                     </div>
                     {% if error == 'email-error' %}
@@ -122,7 +122,7 @@
                     <div class="row elements">
                         <label for="inputPIN" class="col-md-4 form-label">PIN</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="inputPIN" maxlength="6" name="pin">
+                            <input type="text" class="form-control" id="inputPIN" maxlength="6" name="pin" pattern="[0-9]*" title="Enter Only Numbers">
                         </div>
                     </div>
                     {% if error == 'no-option' %}

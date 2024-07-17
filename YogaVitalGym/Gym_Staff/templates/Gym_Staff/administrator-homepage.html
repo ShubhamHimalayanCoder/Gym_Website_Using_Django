@@ -133,7 +133,7 @@
             <section id="queries">
                 {% block content %}
                 {% for query in queries %}
-                <form action="{%url 'Gym_Staff:respond-query' query.id %}" method="POST" id="query-form">
+                <form action="{% url 'Gym_Staff:respond-query' query.id %}" method="POST" id="query-form">
                 {% csrf_token %}
                     <div class="form-group">
                         <b>{{query.query_subject}}</b>
